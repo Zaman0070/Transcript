@@ -11,7 +11,7 @@ import java.io.File;
 
 public class TranscriptTablePanel extends JPanel {
     private DefaultTableModel model;
-    private File[] files;  // Array to store references to the audio files
+    private File[] files;
 
     public TranscriptTablePanel(MainFrame mainFrame) {
         setLayout(new BorderLayout());
@@ -22,10 +22,8 @@ public class TranscriptTablePanel extends JPanel {
         JTable table = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(table);
 
-        // Load default data from files
         loadDefaultData();
 
-        // Listen for row selection and update MainFrame
         table.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -65,10 +63,8 @@ public class TranscriptTablePanel extends JPanel {
                         String duration = song.getFileLength();
                         String speaker = "Speaker 1"; // Default speaker
 
-                        // Add a row to the table
                         model.addRow(new Object[]{duration, speaker, title});
 
-                        // Store the file reference in the array
                         files[i] = file;
                     } catch (Exception e) {
                         System.err.println("Error processing file: " + file.getName());

@@ -15,7 +15,6 @@ public class ContextMenu extends JPopupMenu {
         JMenuItem switchToSpeaker1 = new JMenuItem("Speaker 1");
         JMenuItem switchToSpeaker2 = new JMenuItem("Speaker 2");
 
-        // Add Action Listeners for the "Switch to" menu items
         switchToSpeaker1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,7 +29,6 @@ public class ContextMenu extends JPopupMenu {
             }
         });
 
-        // Action Listener for editing speaker name (example functionality)
         editSpeakerName.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
